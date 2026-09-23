@@ -1,0 +1,461 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Gemini Gem 教師社群紀錄</title>
+<style>
+  :root{
+    --bg:#ffffff;
+    --surface:#f3f6fb;
+    --surface-2:#eef2f9;
+    --ink:#1b2430;
+    --ink-soft:#525d70;
+    --ink-faint:#7c879b;
+    --border:#e1e6f0;
+    --accent:#2458d6;
+    --accent-ink:#173d9c;
+    --accent-soft:#eaf1ff;
+    --accent2:#d9660f;
+    --accent2-soft:#fdf0e4;
+    --quote-bg:#f6f8fd;
+    --code-bg:#eef1f7;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12151c;
+      --surface:#1a1f2b;
+      --surface-2:#1f2534;
+      --ink:#e8ecf5;
+      --ink-soft:#aab2c5;
+      --ink-faint:#7d869b;
+      --border:#2b3242;
+      --accent:#6f97ff;
+      --accent-ink:#bcd0ff;
+      --accent-soft:#1c2740;
+      --accent2:#f0925a;
+      --accent2-soft:#33241a;
+      --quote-bg:#1c2130;
+      --code-bg:#1c212e;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12151c;
+    --surface:#1a1f2b;
+    --surface-2:#1f2534;
+    --ink:#e8ecf5;
+    --ink-soft:#aab2c5;
+    --ink-faint:#7d869b;
+    --border:#2b3242;
+    --accent:#6f97ff;
+    --accent-ink:#bcd0ff;
+    --accent-soft:#1c2740;
+    --accent2:#f0925a;
+    --accent2-soft:#33241a;
+    --quote-bg:#1c2130;
+    --code-bg:#1c212e;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    padding-inline: 20px;
+    padding-block: 32px 64px;
+  }
+  h1,h2,h3{
+    font-family: "Noto Serif TC","Noto Sans TC",serif;
+    color: var(--ink);
+    text-wrap: balance;
+    line-height: 1.35;
+  }
+  .wrap{ max-width: 780px; margin: 0 auto; }
+
+  /* header */
+  header.hero{
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 28px;
+    margin-bottom: 30px;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size: .82rem; letter-spacing:.08em; font-weight:700;
+    color: var(--accent-ink); background: var(--accent-soft);
+    border-radius: 999px; padding: 5px 14px; text-transform: uppercase;
+  }
+  h1.title{
+    font-size: 2.35rem;
+    margin: 16px 0 10px;
+    font-weight: 700;
+  }
+  .subtitle{
+    color: var(--ink-soft);
+    font-size: 1.08rem;
+    margin: 0 0 18px;
+  }
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap: 10px 22px;
+    font-size: .92rem; color: var(--ink-soft);
+  }
+  .meta-row div{ display:flex; gap:6px; align-items:baseline; }
+  .meta-row b{ color: var(--ink); font-weight:600; }
+
+  .disclaimer{
+    margin-top:18px;
+    background: var(--accent2-soft);
+    border: 1px solid color-mix(in srgb, var(--accent2) 35%, var(--border));
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: .92rem;
+    color: var(--ink-soft);
+  }
+  .disclaimer b{ color: var(--ink); }
+
+  /* nav */
+  nav.toc{
+    display:flex; flex-wrap:wrap; gap:8px;
+    margin: 26px 0 8px;
+  }
+  nav.toc a{
+    font-size:.86rem; text-decoration:none; color: var(--ink-soft);
+    background: var(--surface); border:1px solid var(--border);
+    border-radius: 999px; padding: 6px 13px;
+  }
+  nav.toc a:hover{ color: var(--accent-ink); border-color: var(--accent); }
+
+  /* sections */
+  section{ margin-top: 44px; scroll-margin-top: 20px; }
+  .kicker{
+    font-size: .85rem; font-weight:700; letter-spacing:.06em;
+    color: var(--accent-ink); text-transform: uppercase; margin-bottom:6px;
+  }
+  h2{
+    font-size: 1.55rem;
+    margin: 0 0 6px;
+    padding-left: 14px;
+    border-left: 4px solid var(--accent);
+  }
+  .section-time{ color: var(--ink-faint); font-size:.88rem; margin: 0 0 16px 18px; }
+  h3{ font-size: 1.15rem; margin: 22px 0 8px; color: var(--accent-ink); }
+  p{ margin: 0 0 14px; }
+  .lede{ font-size: 1.12rem; color: var(--ink); }
+
+  .callout{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .callout.warn{ background: var(--accent2-soft); border-color: color-mix(in srgb, var(--accent2) 30%, var(--border)); }
+  .callout .label{ font-weight:700; font-size:.85rem; text-transform:uppercase; letter-spacing:.05em; color: var(--accent2); margin-bottom:6px; }
+  .callout.warn .label{ color: var(--accent2); }
+
+  ul, ol{ padding-left: 1.35em; margin: 0 0 14px; }
+  li{ margin-bottom: 6px; }
+
+  .steps{ counter-reset: step; list-style:none; padding-left:0; }
+  .steps li{
+    counter-increment: step;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 12px;
+  }
+  .steps li::before{
+    content: counter(step);
+    position:absolute; left:0; top:0;
+    width: 26px; height:26px; border-radius:50%;
+    background: var(--accent-soft); color: var(--accent-ink);
+    font-weight:700; font-size:.85rem;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  .framework{
+    display:grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    gap: 10px; margin: 14px 0 18px;
+  }
+  .framework .card{
+    background: var(--surface); border:1px solid var(--border);
+    border-radius: 10px; padding: 12px 14px;
+  }
+  .framework .card .k{ font-size:.8rem; font-weight:700; color: var(--accent-ink); text-transform:uppercase; letter-spacing:.04em; margin-bottom:4px;}
+  .framework .card .v{ font-size:.95rem; color: var(--ink-soft); }
+
+  /* quotes */
+  blockquote{
+    margin: 14px 0; padding: 14px 18px;
+    background: var(--quote-bg); border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    font-style: italic; color: var(--ink);
+  }
+  .quote-grid{ display:flex; flex-direction:column; gap:12px; margin-top:10px;}
+  .quote-item{
+    background: var(--quote-bg); border:1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+  }
+  .quote-item .tag{
+    display:inline-block; font-size:.78rem; font-weight:700;
+    color: var(--accent-ink); background: var(--accent-soft);
+    border-radius:6px; padding:2px 8px; margin-bottom:8px;
+  }
+  .quote-item p{ margin:0; font-style: italic; }
+
+  /* concepts */
+  .concepts{ display:grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap:12px; margin-top: 12px;}
+  .concept{ background: var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 16px; }
+  .concept dt{ font-weight:700; color: var(--ink); margin-bottom:4px; }
+  .concept dd{ margin:0; color: var(--ink-soft); font-size:.95rem; }
+
+  /* actions */
+  .action-list{ list-style:none; padding:0; display:flex; flex-direction:column; gap:12px; margin-top:14px;}
+  .action-item{
+    display:flex; gap:12px; align-items:flex-start;
+    background: var(--surface); border:1px solid var(--border);
+    border-radius: 12px; padding: 14px 16px;
+  }
+  .action-item .box{
+    flex: none; width:22px; height:22px; margin-top:2px;
+    border:2px solid var(--accent); border-radius:6px;
+  }
+  .action-item .txt b{ display:block; margin-bottom:3px; }
+  .action-item .txt span{ color: var(--ink-soft); font-size:.92rem; }
+  .first-step{
+    margin-top:14px; padding:14px 16px;
+    background: var(--accent-soft); border-radius:12px;
+    font-size:.95rem;
+  }
+  .first-step b{ color: var(--accent-ink); }
+
+  /* room texture */
+  .room{
+    display:flex; flex-direction:column; gap:10px; margin-top:12px;
+  }
+  .room li{ list-style:none; padding-left:22px; position:relative; color: var(--ink-soft); }
+  .room li::before{ content:"✦"; position:absolute; left:0; color: var(--accent); }
+
+  footer{
+    margin-top: 56px; padding-top: 22px; border-top:1px solid var(--border);
+    color: var(--ink-faint); font-size:.86rem;
+  }
+
+  @media (max-width: 480px){
+    body{ font-size:16.5px; padding-inline:16px; }
+    h1.title{ font-size: 1.9rem; }
+    h2{ font-size: 1.3rem; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow">AI資訊與思考力社群紀錄・分享紀錄</span>
+    <h1 class="title">AI 資訊與思考力社群｜Gemini Gem 客製化助理實作分享</h1>
+    <p class="subtitle">第一次社群聚會：帶著老師動手打造一個能重複使用的 Gemini GEM 小助理</p>
+    <div class="meta-row">
+      <div><b>日期</b>2026-09-23（三）</div>
+      <div><b>時間</b>14:10 起，約 60 分鐘</div>
+      <div><b>場合</b>校內教師社群「AI 資訊與思考力社群」第一次聚會</div>
+      <div><b>分享者</b>3cfish</div>
+    </div>
+    <div class="disclaimer">
+      <b>紀錄說明：</b>本文由錄音自動語音辨識後整理，非逐字精確稿。人名、產品名稱、數字等已盡量核對前後文，仍請以實際內容為準；辨識不清處以 <code>[??]</code> 標示。
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#core">核心訊息</a>
+    <a href="#p1">社群開場</a>
+    <a href="#p3">案例警示</a>
+    <a href="#p4">使用心法</a>
+    <a href="#p5">Gem 實作</a>
+    <a href="#p6">延伸應用</a>
+    <a href="#p7">語音展示</a>
+    <a href="#p8">現場 Q&A</a>
+    <a href="#quotes">精華引述</a>
+    <a href="#concepts">關鍵概念</a>
+    <a href="#actions">行動點</a>
+    <a href="#room">現場側記</a>
+  </nav>
+
+  <section id="core">
+    <div class="kicker">核心訊息</div>
+    <h2 style="border:none;padding-left:0;">用 AI 幫自己減輕重複性工作，但思考不能外包</h2>
+    <p class="lede">
+      這是「AI 資訊與思考力社群」第一次聚會。帶領人從早期「資訊融入」的校園經驗談起，說明現在推動 AI 也是同樣的脈絡——不論學得快或慢都無妨，重點是願意一起涉略。
+      整場分享的主軸落在 <b>Google Gemini 的「Gem」客製化助理功能</b>：示範如何把「角色、任務、規則、輸出」四個要素寫成一份設定，做出一個能重複使用的小助理（例如處理學生事件、寫正向評語、命題），
+      同時提醒老師：AI 產出的內容速度快、量大，但使用時仍要「先自己想過一輪，再交給 AI 補充」，並以六年級辯論比賽學生未查證 AI 資訊的案例，提醒對學生 AI 素養的把關。
+    </p>
+  </section>
+
+  <section id="p1">
+    <div class="kicker">Part 1</div>
+    <h2>社群開場與定位</h2>
+    <div class="section-time">約 00:10:00–00:14:57</div>
+    <p><b>核心觀點：</b>說明這是社群第一次聚會，帶領人坦言籌備有壓力；回顧民國八十幾年「資訊融入」時期的校園經驗，指出現在 AI 相關研習雖多，但學習步調因人而異都沒關係，重點是願意一起參與。</p>
+    <p><b>重要性：</b>降低老師參加社群的心理壓力，建立「不強制、純吸收」的社群氛圍。</p>
+    <div class="framework">
+      <div class="card"><div class="k">參與方式</div><div class="v">純粹吸收即可，沒有出席壓力，臨時請假沒關係</div></div>
+      <div class="card"><div class="k">作業</div><div class="v">如果可以的話，每次社群結束後，給我約 30 字心得即可，傳訊息或是mail都可以</div></div>
+      <div class="card"><div class="k">期末</div><div class="v">需整理成果報告；互動討論的照片可協助記錄</div></div>
+    </div>
+    <p><b>付費 AI 使用現況：</b>現場詢問有多少人自費訂閱 AI 服務，回應者不多；帶領人表示會盡量從「學校 Google 教育版」等免費資源出發，讓大家先嘗試。</p>
+  </section>
+
+  <section id="p3">
+    <div class="kicker">Part 2 · 案例警示</div>
+    <h2>學生未查證直接引用 AI 資訊</h2>
+    <div class="section-time">約 00:15:01–00:16:47</div>
+    <p><b>核心觀點：</b>帶領人分享自己去看六年級辯論比賽的觀察：許多學生用 AI 搜尋、整理資料後直接呈現報告，其中一組把西元年份的數字搞錯，差異很大，卻完全沒有察覺、也沒有查證的過程。</p>
+    <div class="callout warn">
+      <div class="label">提醒</div>
+      這讓帶領人反思：孩子把「思考」這件事直接外包給 AI，AI 整理出什麼就直接拿來用。因此建議 <b>大人可以碰、多方嘗試沒問題，但小孩子應盡量避免直接使用 AI 產出的內容</b>，中間仍需要有自己的學習與判斷過程。
+    </div>
+    <p>另補充一則例子：一位學生在寫程式作業時，堅持自己想、不與人討論，反而讓帶領人意識到「自主思考後產出的東西才是自己的」，這與過度依賴 AI 產出形成對比，也點出培養學生自主學習能力的重要性。</p>
+  </section>
+
+  <section id="p4">
+    <div class="kicker">Part 3 · 使用心法</div>
+    <h2>先人後機</h2>
+    <div class="section-time">約 00:16:51–00:18:00</div>
+    <p><b>核心觀點：</b>建議使用 AI 的順序是「自己先想一想，再丟給 AI 幫忙擴充方案」，而不是一開始就完全依賴 AI 生成。</p>
+    <p><b>示範例子：</b>用「給自己兩分鐘時間，寫下一塊磚頭能有什麼用途」做對照——AI 不到兩分鐘就能列出二三十種方案，人腦很難這麼快想出這麼多，但正因如此，更要先讓自己想過一輪，再用 AI 的產出補足思考盲點，而不是直接跳過思考的步驟。</p>
+  </section>
+
+  <section id="p5">
+    <div class="kicker">Part 4 · 核心實作</div>
+    <h2>Gemini Gem 示範：學生事件處理小助理</h2>
+    <div class="section-time">約 00:18:00–00:34:00</div>
+    <p><b>核心觀點：</b>手把手示範如何在 Gemini 建立一個客製化「Gem」（類似可重複使用的專屬小助理），以「學生事件處理小助理」為範例，帶大家看懂 Prompt 該怎麼寫、怎麼用。</p>
+
+    <h3>設定架構（五個方向）</h3>
+    <div class="framework">
+      <div class="card"><div class="k">名稱</div><div class="v">學生事件處理小助理</div></div>
+      <div class="card"><div class="k">角色</div><div class="v">一位教學經驗豐富的資深老師，能冷靜回顧各種學生事件</div></div>
+      <div class="card"><div class="k">任務</div><div class="v">釐清事情脈絡、規劃有效溝通方式</div></div>
+      <div class="card"><div class="k">規則</div><div class="v">陳述可確認的事實、不貼標籤、不判定責任歸屬</div></div>
+      <div class="card"><div class="k">輸出</div><div class="v">用「三明治回覆法」呈現，附上與家長溝通的草稿及下一步建議</div></div>
+    </div>
+
+    <h3>操作步驟</h3>
+    <ol class="steps">
+      <li>點選介面右上角「新增」，建立一個新的 Gem</li>
+      <li>把名稱與使用說明文字貼上（可先用前述五個方向草擬）</li>
+      <li>使用「魔法筆」（潤飾功能）把描述整理得更有結構性</li>
+      <li>按右上角「更新／儲存」完成設定</li>
+      <li>之後只要在對話中簡述事件經過並貼上，即可產出建議回覆（範例中約 150 字）</li>
+    </ol>
+    <p>桌面另放有「學生作業資料夾」，內含範例文案可直接取用或修改，不必照抄帶領人的版本，也鼓勵老師改成自己的說法。現場並實際協助一位老師排除操作問題（「新增」按鈕找不到是因為尚未使用過）。</p>
+  </section>
+
+  <section id="p6">
+    <div class="kicker">Part 5 · 延伸應用</div>
+    <h2>同一套框架，換個角色就能重複利用</h2>
+    <div class="section-time">約 00:37:39–00:39:58</div>
+    <p><b>核心觀點：</b>同樣的「角色、任務、規則、輸出」架構，只要換內容就能延伸成不同用途，鼓勵老師依需求自行調整規則欄位。</p>
+    <ul>
+      <li><b>命題小助手：</b>提供一份考古題，請 AI 依同樣風格命題，可作為練習題出題的輔助。</li>
+      <li><b>正向評語產生器：</b>用在學期末評語撰寫，把要給孩子的評語改用正向方式陳述；已設定共用給有需要的同仁，貼上名單與簡述即可產出正向評語。</li>
+      <li><b>輔導角色小助理：</b>建議也可以把角色設定改成「輔導角色」，強化輔導相關規則，之後遇到輔導問題可直接丟進去詢問。</li>
+    </ul>
+    <p>帶領人提醒：助理角色設定的範圍可以拉大一點，不必侷限單一用途，鼓勵老師依自己實際會反覆處理的工作去客製化。</p>
+  </section>
+
+  <section id="p7">
+    <div class="kicker">Part 6 · 個人分享</div>
+    <h2>付費心得與 Gemini 語音助理現場展示</h2>
+    <div class="section-time">約 00:44:38–00:47:24</div>
+    <p><b>核心觀點：</b>分享自己付費使用 AI 服務的經驗，並現場用手機示範 Gemini 的語音對話功能。</p>
+    <ul>
+      <li>提到自己有訂閱付費版 AI 服務（曾以年繳方式訂閱），也嘗試過其他家的 AI 工具</li>
+      <li>認為 Google 的 AI 整合了整個 Google 生態系，未來很有潛力</li>
+      <li>現場用語音直接詢問手機「今天有什麼科技新聞」，AI 主動整理出重點，提到與 <b>agentic AI</b>（AI 從聊天工具走向能主動代為操作、安排事務）相關的趨勢（現場提及的產品名稱因收音不清，標示 <code>[??]</code> 待查證）</li>
+      <li>接著示範詢問「台北有什麼熱鬧的地方」，AI 口語回覆推薦華山、西門町、紅樓、信義區、101 等景點</li>
+    </ul>
+    <blockquote>「打字有時候太慢，反而是用聊天的方式更能夠更自然地去觸發一些好的效果。」</blockquote>
+  </section>
+
+  <section id="p8">
+    <div class="kicker">Part 7 · 現場 Q&A</div>
+    <h2>真實案例演練：難溝通的家長</h2>
+    <div class="section-time">約 00:47:24–00:51:20</div>
+    <p><b>核心觀點：</b>有老師現場提出真實困境——家長不滿作業量太多，又堅持孩子飲食有特殊要求（不喝牛奶），親師關係已經有點緊張。帶領人現場用 AI 助理協助梳理回應方向。</p>
+    <div class="framework">
+      <div class="card"><div class="k">作業量</div><div class="v">可與家長協調並說明作業設計目的，評估是否能為孩子做彈性調整</div></div>
+      <div class="card"><div class="k">飲食</div><div class="v">學校僅能要求均衡營養餐、鼓勵喝奶但不強制，家庭內的部分學校較難介入</div></div>
+      <div class="card"><div class="k">關係緊張</div><div class="v">建議先釐清家長不滿的具體點、判斷是否情緒化，再嘗試坐下來溝通</div></div>
+    </div>
+    <p><b>其他語音助理應用示範：</b></p>
+    <ul>
+      <li>拍照上傳作業題目，讓 AI 用引導方式帶學生思考，而非直接給答案，擔任類似助教的角色</li>
+      <li>語音角色扮演練習英語口說：設定一個「專欄」角色，固定字數的短文朗讀後由 AI 給予回饋</li>
+      <li>心情抒發／聊天對象：可作為隨時能討論事情的對象</li>
+    </ul>
+    <p><b>費用與使用界線：</b>帶領人提到每月約 690 元的訂閱費用，覺得能讓孩子多方嘗試學習算是划算；但也提醒：</p>
+    <blockquote>「這個是在看得到的範圍去限制他們去使用某些功能，而不是讓他們沒有規範的自由使用。」</blockquote>
+  </section>
+
+  <section id="quotes">
+    <div class="kicker">精華引述</div>
+    <h2>10 條現場原話</h2>
+    <div class="quote-grid">
+      <div class="quote-item"><span class="tag">社群定位</span><p>「這個不是只有在學校工作才會用到，很多場合、場域都會用到。」</p></div>
+      <div class="quote-item"><span class="tag">參與心態</span><p>「一起參與，提起大家，帶著大家一起去涉略一下。」</p></div>
+      <div class="quote-item"><span class="tag">AI 風險意識</span><p>「孩子們真的就是把思考這件事情……丟給 AI 整理出什麼，他就把它剪貼後報告。」</p></div>
+      <div class="quote-item"><span class="tag">AI 風險意識</span><p>「大人可以碰，可是小孩子盡量先不要去碰 AI ，尤其是直接生成的文案。」</p></div>
+      <div class="quote-item"><span class="tag">使用心法</span><p>「我們盡量用的方法就是先人後機，自己先思考想一想，然後再丟給 AI 去幫你產出。」</p></div>
+      <div class="quote-item"><span class="tag">使用心法</span><p>「 AI 可以快速把方案全部列出來，可是做決定的是你。」</p></div>
+      <div class="quote-item"><span class="tag">今天的 Gem 規則設計</span><p>「陳述可確認的事實，不貼標籤，不判定責任歸屬。」</p></div>
+      <div class="quote-item"><span class="tag">應用彈性</span><p>「這個助理呢可以設定很多角色，今天只舉一個例子，大家回去後可以去做很多不一樣的助理。」</p></div>
+      <div class="quote-item"><span class="tag">語音助理體驗</span><p>「打字有時候太慢，反而是用聊天的方式更能夠更自然地去觸發一些好的效果。」</p></div>
+      <div class="quote-item"><span class="tag">孩子使用界線</span><p>「這個是在看得到的範圍去限制他們去使用某些功能，而不是讓他們沒有規範的自由使用。」</p></div>
+    </div>
+  </section>
+
+  <section id="concepts">
+    <div class="kicker">關鍵概念工具箱</div>
+    <h2>今天出現的關鍵詞</h2>
+    <dl class="concepts">
+      <div class="concept"><dt>Gem（客製化助理）</dt><dd>Google Gemini 提供的自訂 AI 助理功能，可設定角色、任務、規則、輸出格式，重複用於特定情境（如學生事件處理、命題、評語撰寫）。</dd></div>
+      <div class="concept"><dt>三明治回覆法</dt><dd>本場示範的輸出格式之一：以正向開頭、中段說明需溝通或改善之處、最後以正向或建設性方向收尾的溝通框架。</dd></div>
+      <div class="concept"><dt>Prompt 四要素</dt><dd>本場示範建立 Gem 的架構：角色、任務、規則、輸出格式，是可套用到不同用途的通用寫法。</dd></div>
+      <div class="concept"><dt>魔法筆（潤飾功能）</dt><dd>Gemini 介面中可將輸入文字自動整理得更有結構性的工具，用於優化 Gem 的使用說明文字。</dd></div>
+      <div class="concept"><dt>Agentic AI</dt><dd>語音助理示範段落提到的趨勢用詞，指 AI 從單純聊天工具演變為能主動代為操作、安排事務的助理；現場提到的相關產品名稱因收音不清，待查證。</dd></div>
+    </dl>
+  </section>
+
+  <section id="actions">
+    <div class="kicker">行動點</div>
+    <h2>回去可以先做的 5 件事</h2>
+    <ul class="action-list">
+      <li class="action-item"><div class="box"></div><div class="txt"><b>把一件常反覆處理的工作做成一個 Gem</b><span>例如學生事件溝通、正向評語撰寫——一次設定，之後重複使用，省下逐次撰寫的時間。</span></div></li>
+      <li class="action-item"><div class="box"></div><div class="txt"><b>用 AI 前先自己想過一輪，再交給 AI 補充比對</b><span>呼應辯論比賽案例的提醒，避免自己與學生落入「AI 說什麼就是什麼」。</span></div></li>
+      <li class="action-item"><div class="box"></div><div class="txt"><b>多利用語音對話，少一點打字</b><span>「用聊天的方式更能夠自然地去觸發一些好的效果」——尤其適合快速查詢或口說練習。</span></div></li>
+      <li class="action-item"><div class="box"></div><div class="txt"><b>學生使用 AI 時保持在可視範圍內監督</b><span>「不是讓他們不上線地去亂用它」——功能與範圍先限制好，再放手讓學生嘗試。</span></div></li>
+      <li class="action-item"><div class="box"></div><div class="txt"><b>還沒付費訂閱的人，先用學校 Google 教育版資源試用看看</b><span>目前社群裡自費訂閱的人不多，可以先觀察自己的實際需求再決定。</span></div></li>
+    </ul>
+    <div class="first-step">
+      <b>第一步建議：</b>從一個自己最常需要重複處理的溝通情境開始（例如聯絡簿回覆、班級公告），依「角色、任務、規則、輸出」四要素試著建立你的第一個 Gem。
+    </div>
+  </section>
+
+  <section id="room">
+    <div class="kicker">沒到現場會錯過的東西</div>
+    <h2>現場側記</h2>
+    <ul class="room">
+      <li>整場氣氛偏向務實、互動：帶領人邊示範邊切換螢幕，並實際協助個別老師排除操作卡關（例如「新增」按鈕找不到）</li>
+      <li>結尾的 Q&A 不是抽象討論，而是一位老師直接丟出真實的親師溝通困境，帶領人當場示範怎麼用 AI 協助梳理回應</li>
+      <li>整體基調並非「AI 萬能」，而是反覆提醒：AI 產出快、量大，正因如此更要有意識地先思考、再借助 AI，並對學生的使用保持監督</li>
+    </ul>
+  </section>
+
+  <footer>
+    由錄音自動轉譯與整理，Claude 協助製作。逐字稿前段（00:00–10:00）因音質與內容判斷與本場社群分享無關，已略過未收錄於本紀錄。
+  </footer>
+
+</div>
+
+</body></html>
