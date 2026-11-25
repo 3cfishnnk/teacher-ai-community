@@ -23,7 +23,7 @@ const communityRecords = [
     time: "13:30 起，約 60 分鐘",
     topic: "iPad 課堂管理｜教師快閃研習",
     summary:
-      "教師機內建 Classroom（課堂）App 與另一套平板管理 App，兩者搭配示範如何在課堂中監看、鎖定、開啟指定 App 或網站，並能設定允許清單＋時間鎖定，讓學生把平板帶回家也只能使用指定的學習資源。",
+      "介紹教師機內建的 Apple 課堂（Classroom）與 Jamf Teacher 兩款 App 在課堂中的應用：即時監看與鎖定學生畫面、統一開啟指定 App 或網站，並可透過允許清單、時間鎖定與課程範本，確保平板僅用於指定學習用途。",
     presenter: "3cfish",
     folder: "records/2026-11-25-第四次社群聚會/",
     links: {
