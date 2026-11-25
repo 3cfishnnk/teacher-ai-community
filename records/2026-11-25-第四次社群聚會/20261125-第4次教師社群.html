@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>iPad 課堂管理｜教師快閃研習 教師社群紀錄</title>
+<title>iPad 課堂管理｜Apple 課堂與 Jamf Teacher 應用說明</title>
 <style>
   :root{
     --bg:#ffffff;
@@ -134,7 +134,6 @@
     padding-left: 14px;
     border-left: 4px solid var(--accent);
   }
-  .section-time{ color: var(--ink-faint); font-size:.88rem; margin: 0 0 16px 18px; }
   h3{ font-size: 1.15rem; margin: 22px 0 8px; color: var(--accent-ink); }
   p{ margin: 0 0 14px; }
   .lede{ font-size: 1.12rem; color: var(--ink); }
@@ -146,9 +145,7 @@
     padding: 16px 20px;
     margin: 16px 0;
   }
-  .callout.warn{ background: var(--accent2-soft); border-color: color-mix(in srgb, var(--accent2) 30%, var(--border)); }
   .callout .label{ font-weight:700; font-size:.85rem; text-transform:uppercase; letter-spacing:.05em; color: var(--accent2); margin-bottom:6px; }
-  .callout.warn .label{ color: var(--accent2); }
 
   ul, ol{ padding-left: 1.35em; margin: 0 0 14px; }
   li{ margin-bottom: 6px; }
@@ -180,26 +177,6 @@
   .framework .card .k{ font-size:.8rem; font-weight:700; color: var(--accent-ink); text-transform:uppercase; letter-spacing:.04em; margin-bottom:4px;}
   .framework .card .v{ font-size:.95rem; color: var(--ink-soft); }
 
-  blockquote{
-    margin: 14px 0; padding: 14px 18px;
-    background: var(--quote-bg); border-left: 3px solid var(--accent);
-    border-radius: 0 10px 10px 0;
-    font-style: italic; color: var(--ink);
-  }
-  .quote-grid{ display:flex; flex-direction:column; gap:12px; margin-top:10px;}
-  .quote-item{
-    background: var(--quote-bg); border:1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 10px 10px 0;
-    padding: 14px 18px;
-  }
-  .quote-item .tag{
-    display:inline-block; font-size:.78rem; font-weight:700;
-    color: var(--accent-ink); background: var(--accent-soft);
-    border-radius:6px; padding:2px 8px; margin-bottom:8px;
-  }
-  .quote-item p{ margin:0; font-style: italic; }
-
   .concepts{ display:grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap:12px; margin-top: 12px;}
   .concept{ background: var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 16px; }
   .concept dt{ font-weight:700; color: var(--ink); margin-bottom:4px; }
@@ -224,12 +201,6 @@
   }
   .first-step b{ color: var(--accent-ink); }
 
-  .room{
-    display:flex; flex-direction:column; gap:10px; margin-top:12px;
-  }
-  .room li{ list-style:none; padding-left:22px; position:relative; color: var(--ink-soft); }
-  .room li::before{ content:"✦"; position:absolute; left:0; color: var(--accent); }
-
   footer{
     margin-top: 56px; padding-top: 22px; border-top:1px solid var(--border);
     color: var(--ink-faint); font-size:.86rem;
@@ -245,9 +216,9 @@
 <div class="wrap">
 
   <header class="hero">
-    <span class="eyebrow">AI資訊與思考力社群紀錄・分享紀錄</span>
-    <h1 class="title">AI 資訊與思考力社群｜iPad 課堂管理教師快閃研習</h1>
-    <p class="subtitle">第四次社群聚會：行動載具（iPad）融入課堂的班級管理實作教學</p>
+    <span class="eyebrow">AI資訊與思考力社群・教師參考資料</span>
+    <h1 class="title">iPad 課堂管理：Apple 課堂與 Jamf Teacher 應用說明</h1>
+    <p class="subtitle">第四次社群聚會：Apple 課堂（Classroom）與 Jamf Teacher 兩款 App 的課堂管理應用整理</p>
     <div class="meta-row">
       <div><b>日期</b>2026-11-25（三）</div>
       <div><b>時間</b>13:30 起，約 60 分鐘</div>
@@ -255,153 +226,100 @@
       <div><b>分享者</b>3cfish</div>
     </div>
     <div class="disclaimer">
-      <b>紀錄說明：</b>本文由錄音自動語音辨識後整理，非逐字精確稿。人名、產品名稱、數字等已盡量核對前後文，仍請以實際內容為準；辨識不清處以 <code>[??]</code> 標示。
+      <b>使用說明：</b>本文整理自「AI 資訊與思考力社群」第四次聚會分享內容，經彙整與潤飾後，作為全校教師使用 Apple 課堂與 Jamf Teacher 進行 iPad 課堂管理之參考說明，未參加研習的教師亦可直接參閱。
     </div>
   </header>
 
   <nav class="toc">
-    <a href="#core">核心訊息</a>
-    <a href="#p1">設備現況</a>
-    <a href="#p2">App 總覽</a>
-    <a href="#p3">Classroom 實作</a>
-    <a href="#p4">管理 App 實作</a>
-    <a href="#p5">英文老師技巧</a>
-    <a href="#p6">結語與社群事務</a>
-    <a href="#quotes">精華引述</a>
-    <a href="#concepts">關鍵概念</a>
-    <a href="#actions">行動點</a>
-    <a href="#room">現場側記</a>
+    <a href="#core">核心概念</a>
+    <a href="#classroom">Apple 課堂</a>
+    <a href="#jamf">Jamf Teacher</a>
+    <a href="#tips">英文教學應用</a>
+    <a href="#concepts">關鍵名詞</a>
+    <a href="#actions">建議嘗試的操作</a>
   </nav>
 
   <section id="core">
-    <div class="kicker">核心訊息</div>
-    <h2 style="border:none;padding-left:0;">兩套 App 搭配，讓 iPad 課堂管理「看得到、管得了、帶得走」</h2>
+    <div class="kicker">核心概念</div>
+    <h2 style="border:none;padding-left:0;">兩款 App 搭配，兼顧課堂監看與使用限制</h2>
     <p class="lede">
-      這是「AI 資訊與思考力社群」第四次聚會，主題聚焦在 <b>iPad 融入課堂的班級管理實作</b>。教師機內建兩款工具：蘋果官方的 <b>Classroom（課堂）</b> App，以及平板代理商另外開發的管理 App，兩者搭配使用，
-      就能做到上課中「看得到全班／個別畫面」、「管得了開啟哪些 App 或網站」，下課後還能「帶得走」——把平板借回家時，用允許清單加上時間鎖定，讓學生只能使用指定的學習資源。
-      分享人也說明了目前校內 iPad 配發現況，以及明年度（116 學年度）的名次擴充規劃。
+      教師機內建兩款 iPad 課堂管理工具：<b>Apple 課堂（Classroom）</b>與 <b>Jamf Teacher</b>，可搭配使用。Apple 課堂 著重即時監看與課堂帶領，能掌握全班或個別學生的畫面、統一開啟指定工具或網站；
+      Jamf Teacher 則著重限制設定與允許清單，可針對特定 App 或網站進行開放或限制，並支援時間鎖定與課程範本。兩者合併運用，便能在課堂中掌握學生平板使用狀況，
+      平板借回家使用時，也能透過允許清單與時間鎖定，確保僅限於指定學習用途。
     </p>
   </section>
 
-  <section id="p1">
-    <div class="kicker">Part 1</div>
-    <h2>設備現況與明年度規畫</h2>
-    <div class="section-time">約 00:07:46–00:09:39</div>
-    <p><b>核心觀點：</b>目前各班使用的平板主機仍是舊機，但平板保護套已汰換為新品；今年已利用年底結餘款採購了約四成數量的新套件。原本規劃明年度（116 學年度）國中部會先行配發新 iPad，但後來評估國中端的實際需求較低，因此決定暫緩國中配發、把名額移撥給國小，使國小明年度可望新增 <b>16 台 iPad</b>。</p>
-    <p><b>重要性：</b>讓老師了解設備規劃的邏輯與優先順序，也呼應社群長期在推動的「主動使用」精神。</p>
-    <div class="framework">
-      <div class="card"><div class="k">目前量能</div><div class="v">約四成班級已換發新的平板保護套（主機仍為舊機）</div></div>
-      <div class="card"><div class="k">明年度新增</div><div class="v">國小預計新增約 16 台 iPad（原規劃移撥自國中部名額）</div></div>
-      <div class="card"><div class="k">配發原則</div><div class="v">優先考量四年級以上班級，並以「老師有主動需求、能直接放進教室使用」者優先</div></div>
-    </div>
-  </section>
+  <section id="classroom">
+    <div class="kicker">App 1</div>
+    <h2>Apple 課堂（Classroom）</h2>
+    <p><b>功能定位：</b>Apple 官方提供的課堂管理工具，教師機可總覽並操作全班或個別學生的 iPad 畫面。</p>
+    <p><b>操作邏輯：</b>畫面最上方的功能列為「全班」操作；下方個別學生縮圖可進行「單一學生」操作；右上角「選取」功能可圈選多位學生組成群組，僅針對該群組進行操作（例如鎖定或解鎖同一排座位）。</p>
 
-  <section id="p2">
-    <div class="kicker">Part 2</div>
-    <h2>兩款管理 App 總覽</h2>
-    <div class="section-time">約 00:09:39–00:13:15</div>
-    <p><b>核心觀點：</b>每台教師機裡都內建兩個管理工具：畫面左側是蘋果官方的 <b>Classroom（課堂）</b> App；右側則是平板代理商另外開發的管理 App（逐字稿收音近似「…Teacher」的名稱，確切產品名稱請以簡報為準 <code>[??]</code>），兩者會搭配著一起用。</p>
-    <p>操作邏輯：畫面最上面一排的按鈕是針對「全班」做操作；底下個別的縮圖則是針對「單一學生」；右上角還有一個「選取」功能，可以圈選某幾位學生組成小群組，單獨對這群人做控制（例如只鎖定某一排座位，再點一次同樣的按鈕即可解鎖）。</p>
-    <div class="callout">
-      <div class="label">現場提醒</div>
-      真的遇到不守規矩的狀況，帶領人坦言最快的做法還是「用老師的管教方式，把平板直接收回來」——App 的鎖定、監看功能是輔助，不是取代班級經營。
-    </div>
-  </section>
-
-  <section id="p3">
-    <div class="kicker">Part 3 · Classroom 實作</div>
-    <h2>全班操作的四個常用招式</h2>
-    <div class="section-time">約 00:13:15–00:24:16</div>
-    <p><b>核心觀點：</b>手把手示範 Classroom App 最常用的四種操作，涵蓋「開啟工具、派送網站、監看畫面、收心與下課總結」。</p>
+    <h3>常用功能</h3>
     <ol class="steps">
-      <li><b>全班同開一個 App：</b>點選想要的工具（現場示範時鐘 App），按下後就能讓全班畫面同時打開同一個工具，省去逐一指導開啟的時間。</li>
-      <li><b>派送網站＋打開後鎖定：</b>先把常用網站（如學校網站、英才網）加進瀏覽器書籤，上課時一鍵把網址派送給全班；搭配「打開後鎖定」可以把畫面鎖在該網站裡，學生按不出去（現場示範時因網路連線稍有延遲，鎖定生效慢了幾秒，帶領人當場說明這是網路問題，不是操作錯誤）。</li>
-      <li><b>畫面監看：</b>點一下即可看到全班即時畫面縮圖；用兩指放大，或連續點兩下，可以放大看個別學生畫面的細節，確認是否真的在進行該做的事。</li>
-      <li><b>收心與下課總結：</b>「跳回主畫面」可以讓分心的畫面瞬間歸位；「鎖定全部」能讓全班螢幕暫時鎖住、專心聽講；「全部靜音」用來處理學生誤開有聲網站的狀況；下課前點選選單，還能看到這堂課「每位學生開了哪些 App、各用了多久」的使用紀錄總表。</li>
+      <li><b>全班同時開啟指定 App：</b>教師選擇欲使用的工具（例如時鐘 App），點選後可讓全班畫面同步開啟同一工具，節省逐一指導開啟的時間。</li>
+      <li><b>派送網站並鎖定畫面：</b>可先將常用網站（如校內網站、學習平台）加入瀏覽器書籤；上課時一鍵將網址派送至全班裝置，並可搭配「打開後鎖定」功能，使學生畫面停留在指定網站，無法自行離開。</li>
+      <li><b>即時監看學生畫面：</b>點選監看功能即可檢視全班即時畫面縮圖；以雙指放大或連續點擊兩下，可放大檢視個別學生畫面細節。</li>
+      <li><b>收心與下課總結：</b>「跳回主畫面」可讓分心畫面立即歸位；「鎖定全部」可讓全班畫面暫時鎖定、專注聽講；「全部靜音」可處理學生誤開有聲網站之情形；下課前可查看本節課各學生開啟之 App 與使用時間紀錄。</li>
     </ol>
-    <p>另外也示範了「投影」功能：可以把指定學生的平板畫面鏡射到教室電視上，方便讓學生上台報告或解說自己的平板內容，畫面最多可以四分割同時呈現多位學生。</p>
+
+    <p><b>畫面投影：</b>Apple 課堂 另提供「投影」功能，可將指定學生的 iPad 畫面鏡射至教室電視，便於學生上台報告或說明平板內容，畫面最多可同時呈現四位學生（四分割顯示）。</p>
+
+    <div class="callout">
+      <div class="label">使用提醒</div>
+      以上功能為課堂管理之輔助工具，若遇學生使用平板違反課堂常規，仍建議優先採用既有班級經營方式處理（如收回裝置），App 功能並非取代班級經營。
+    </div>
   </section>
 
-  <section id="p4">
-    <div class="kicker">Part 4 · 管理 App 實作</div>
-    <h2>限制、允許清單與課程範本</h2>
-    <div class="section-time">約 00:24:16–00:35:53</div>
-    <p><b>核心觀點：</b>第二套管理 App 的重點在「限制」與「允許清單」，還能依班級或科目把常用設定存成課程範本，重複套用。</p>
+  <section id="jamf">
+    <div class="kicker">App 2</div>
+    <h2>Jamf Teacher</h2>
+    <p><b>功能定位：</b>教師機內建之平板管理工具，著重於「限制」與「允許清單」設定，並可依班級或科目建立課程範本，重複套用。</p>
+
     <div class="framework">
-      <div class="card"><div class="k">限制特定 App</div><div class="v">例如限制相機 1 分鐘，套用後學生裝置上的相機圖示會被隱藏、無法開啟</div></div>
-      <div class="card"><div class="k">允許清單（Kiosk 模式）</div><div class="v">反過來只允許指定的少數 App（如時鐘、相機）可見可用，其餘功能全部隱藏鎖定</div></div>
-      <div class="card"><div class="k">允許網站＋帶回家鎖定</div><div class="v">結合 Safari 僅允許特定網站（如英才網），並設定鎖定時數（示範設 8 小時），平板帶回家也只能用這個網站</div></div>
-      <div class="card"><div class="k">課程範本</div><div class="v">依任教班級或科目（例如「306 國語」）把當堂課要開放的 App／網站存成範本，下次一鍵套用</div></div>
+      <div class="card"><div class="k">限制特定 App</div><div class="v">可針對指定 App 設定使用時限（例如限制相機 1 分鐘），套用後該 App 圖示將自學生裝置隱藏並無法開啟</div></div>
+      <div class="card"><div class="k">允許清單（Kiosk 模式）</div><div class="v">僅允許指定之少數 App（如時鐘、相機）可見並使用，其餘功能全部隱藏鎖定</div></div>
+      <div class="card"><div class="k">允許網站並設定帶回家鎖定</div><div class="v">可透過 Safari 限制僅能瀏覽特定網站（如指定學習平台），並設定鎖定時數（例如 8 小時），使平板攜回家使用時仍僅能存取指定學習資源</div></div>
+      <div class="card"><div class="k">課程範本</div><div class="v">依任教班級或科目（例如「306 國語」）建立專屬範本，預先設定該堂課開放之 App／網站，下次授課時一鍵套用，無需重複設定</div></div>
     </div>
-    <p>課程範本也能用在課後情境，例如建立一個叫「回家作業・英才網」的範本，專門給平板帶回家時使用；臨時要改變設定時，點一下「清除限制」就能把剛剛的設定全部重設，不受之前設定影響。</p>
-    <blockquote>「你要用不同的情境，去使用不同的 app，你可以直接設定。」</blockquote>
+
+    <p>課程範本亦可應用於課後情境，例如建立「回家作業」範本，專供平板攜回家使用；如需臨時調整設定，可點選「清除限制」重新設定，不受先前設定影響。</p>
   </section>
 
-  <section id="p5">
-    <div class="kicker">Part 5</div>
-    <h2>英文老師小技巧：關閉自動校正</h2>
-    <div class="section-time">約 00:35:53–00:37:23</div>
-    <p><b>核心觀點：</b>在「限制」選單裡，有一個「拼寫檢查與自動校正」選項。英文老師把平板發給學生練習拼字或聽寫時，輸入法常會自動校正單字、跳出建議字，影響練習的真實性；把這個選項鎖住（關閉自動校正）之後，學生輸入任何英文單字、字母或句子，都不會再被系統自動修改。</p>
-  </section>
-
-  <section id="p6">
-    <div class="kicker">Part 6</div>
-    <h2>結語與社群事務</h2>
-    <div class="section-time">約 00:37:23–結束</div>
-    <p>簡報檔案會後提供給大家；尚未簽到的同仁請補簽到；也請用手機或平板掃描現場 QR code，簡單填寫幾句回饋問卷。</p>
-  </section>
-
-  <section id="quotes">
-    <div class="kicker">精華引述</div>
-    <h2>5 條現場原話</h2>
-    <div class="quote-grid">
-      <div class="quote-item"><span class="tag">設備規劃原則</span><p>「我覺得有比較有自己主動的那種需求的，我覺得那個是更好。」</p></div>
-      <div class="quote-item"><span class="tag">班級經營心法</span><p>「那種不守規矩其實就是，用老師的管教方式，去把他站到後面去，把平板直接收回來，那是最快的。」</p></div>
-      <div class="quote-item"><span class="tag">帶回家鎖定</span><p>「你就放心的讓孩子呢，帶回去，因爲他回去，他也想開那個東西，他完全不能用別的東西。」</p></div>
-      <div class="quote-item"><span class="tag">課程範本彈性</span><p>「你要用不同的情境，去使用不同的 app，你可以直接設定。」</p></div>
-      <div class="quote-item"><span class="tag">英文教學提醒</span><p>「有時候我們要先把那個自動校正的功能把它關掉⋯⋯它就不會有那個自動編寫校正的功能。」</p></div>
-    </div>
+  <section id="tips">
+    <div class="kicker">情境應用</div>
+    <h2>英文聽寫與拼字練習</h2>
+    <p>於 Jamf Teacher 的「限制」選單中，另有「拼寫檢查與自動校正」選項。進行英文聽寫或拼字練習時，建議教師事先關閉此功能，避免學生輸入英文單字時，被系統自動校正或提示正確拼法，影響練習成效。</p>
   </section>
 
   <section id="concepts">
-    <div class="kicker">關鍵概念工具箱</div>
-    <h2>今天出現的關鍵詞</h2>
+    <div class="kicker">關鍵名詞</div>
+    <h2>名詞說明</h2>
     <dl class="concepts">
-      <div class="concept"><dt>Classroom（課堂）App</dt><dd>蘋果官方的課堂管理工具，教師機可總覽並操作全班或個別學生的平板畫面：開啟 App、鎖定、監看、靜音、投影等。</dd></div>
-      <div class="concept"><dt>平板管理 App（名稱待確認 <code>[??]</code>）</dt><dd>平板代理商另外提供的管理工具，著重在「限制」與「允許清單」，可設定時間鎖定與課程範本，與 Classroom 搭配使用。</dd></div>
-      <div class="concept"><dt>允許清單／Kiosk 模式</dt><dd>只開放指定的 App 或網站使用，其餘功能全部隱藏鎖定，常用於帶回家或需要高度專注的情境。</dd></div>
-      <div class="concept"><dt>課程範本</dt><dd>把某堂課或某班級常用的設定（允許的 App／網站）存成範本，下次上課或換班時一鍵套用，不用每次重新設定。</dd></div>
-      <div class="concept"><dt>打開後鎖定（網站鎖定）</dt><dd>教師派送指定網址後，可以讓學生畫面鎖在該網站裡，無法自行離開，類似 Guided Access 的概念。</dd></div>
+      <div class="concept"><dt>Apple 課堂（Classroom）</dt><dd>Apple 官方課堂管理工具，可總覽並操作全班或個別學生的 iPad 畫面：開啟 App、鎖定、監看、靜音、投影等。</dd></div>
+      <div class="concept"><dt>Jamf Teacher</dt><dd>教師機內建之平板管理工具，著重於「限制」與「允許清單」設定，可搭配時間鎖定與課程範本，與 Apple 課堂搭配使用。</dd></div>
+      <div class="concept"><dt>允許清單／Kiosk 模式</dt><dd>僅開放指定 App 或網站使用，其餘功能全部隱藏鎖定，常用於攜回家或須高度專注之情境。</dd></div>
+      <div class="concept"><dt>課程範本</dt><dd>將特定課堂或班級常用設定（允許之 App／網站）儲存為範本，可於下次授課時一鍵套用。</dd></div>
+      <div class="concept"><dt>網站鎖定（打開後鎖定）</dt><dd>教師派送指定網址後，可使學生畫面鎖定於該網站，無法自行離開，概念類似 Guided Access（引導式使用）。</dd></div>
     </dl>
   </section>
 
   <section id="actions">
-    <div class="kicker">行動點</div>
-    <h2>回去可以先做的 5 件事</h2>
+    <div class="kicker">建議嘗試的操作</div>
+    <h2>可優先上手的功能</h2>
     <ul class="action-list">
-      <li class="action-item"><div class="box"></div><div class="txt"><b>為自己任教的班級或科目建立一個課程範本</b><span>把常用的允許 App／網站存起來，下次上課一鍵套用，不用重新設定。</span></div></li>
-      <li class="action-item"><div class="box"></div><div class="txt"><b>平板帶回家使用時，善用「允許清單＋時間鎖定」</b><span>避免平板被用於非學習用途，也能安心讓學生帶回去練習。</span></div></li>
-      <li class="action-item"><div class="box"></div><div class="txt"><b>英文課前先關閉「拼寫檢查與自動校正」</b><span>在限制選單裡鎖住這個選項，讓拼字或聽寫練習更真實。</span></div></li>
-      <li class="action-item"><div class="box"></div><div class="txt"><b>下課前養成看一次「本節 App 使用紀錄」的習慣</b><span>了解學生這堂課實際用了哪些工具、花了多少時間。</span></div></li>
-      <li class="action-item"><div class="box"></div><div class="txt"><b>補齊簽到與問卷回饋</b><span>尚未簽到的同仁請補簽到，也請掃 QR code 簡單填寫幾句心得。</span></div></li>
+      <li class="action-item"><div class="box"></div><div class="txt"><b>依任教班級或科目建立一個 Jamf Teacher 課程範本</b><span>將常用的允許 App／網站儲存起來，下次授課時一鍵套用，無需重新設定。</span></div></li>
+      <li class="action-item"><div class="box"></div><div class="txt"><b>平板攜回家使用時，運用「允許清單＋時間鎖定」</b><span>確保使用範圍限定於指定學習資源，避免被用於非學習用途。</span></div></li>
+      <li class="action-item"><div class="box"></div><div class="txt"><b>英文聽寫或拼字練習前，先關閉拼寫檢查與自動校正</b><span>於 Jamf Teacher 的限制選單中鎖住此選項，讓練習更真實呈現學生程度。</span></div></li>
+      <li class="action-item"><div class="box"></div><div class="txt"><b>下課前養成查看本節 App 使用紀錄的習慣</b><span>掌握學生這堂課實際使用了哪些工具、花費多少時間。</span></div></li>
     </ul>
     <div class="first-step">
-      <b>第一步建議：</b>從下一堂會用到平板的課開始，先練習一次「全班同開一個 App」加上「鎖定全部」，熟悉之後再嘗試課程範本與允許清單。
+      <b>建議優先練習：</b>可先由「全班同時開啟指定 App」與「鎖定全部」兩項功能開始，熟悉後再嘗試 Jamf Teacher 的課程範本與允許清單設定。
     </div>
   </section>
 
-  <section id="room">
-    <div class="kicker">沒到現場會錯過的東西</div>
-    <h2>現場側記</h2>
-    <ul class="room">
-      <li>示範過程中有一次「打開後鎖定」因網路連線稍有延遲、沒有馬上生效，帶領人當場排除並說明這是網路問題，不是操作錯誤</li>
-      <li>有老師現場提問平板投影功能是否類似「拍攝中」直播的概念，帶領人隨即示範把個別學生畫面投影到教室電視，最多可四分割同時呈現</li>
-      <li>現場也臨時測試了「關機／重新開機後，鎖定設定是否還在」的情境，帶領人坦言自己也沒試過，當場和大家一起驗證</li>
-    </ul>
-  </section>
-
   <footer>
-    由錄音自動轉譯與整理，Claude 協助製作。逐字稿開頭的場邊閒聊（點心分享等與研習主題無關的內容）與語音辨識雜訊已略過，未收錄於本紀錄。
+    本文整理自「AI 資訊與思考力社群」第四次聚會分享內容，由 Claude 協助彙整、潤飾為全校教師參考資料。
   </footer>
 
 </div>
