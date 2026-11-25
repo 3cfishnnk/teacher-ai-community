@@ -1,0 +1,409 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>iPad 課堂管理｜教師快閃研習 教師社群紀錄</title>
+<style>
+  :root{
+    --bg:#ffffff;
+    --surface:#f3f6fb;
+    --surface-2:#eef2f9;
+    --ink:#1b2430;
+    --ink-soft:#525d70;
+    --ink-faint:#7c879b;
+    --border:#e1e6f0;
+    --accent:#2458d6;
+    --accent-ink:#173d9c;
+    --accent-soft:#eaf1ff;
+    --accent2:#d9660f;
+    --accent2-soft:#fdf0e4;
+    --quote-bg:#f6f8fd;
+    --code-bg:#eef1f7;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12151c;
+      --surface:#1a1f2b;
+      --surface-2:#1f2534;
+      --ink:#e8ecf5;
+      --ink-soft:#aab2c5;
+      --ink-faint:#7d869b;
+      --border:#2b3242;
+      --accent:#6f97ff;
+      --accent-ink:#bcd0ff;
+      --accent-soft:#1c2740;
+      --accent2:#f0925a;
+      --accent2-soft:#33241a;
+      --quote-bg:#1c2130;
+      --code-bg:#1c212e;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12151c;
+    --surface:#1a1f2b;
+    --surface-2:#1f2534;
+    --ink:#e8ecf5;
+    --ink-soft:#aab2c5;
+    --ink-faint:#7d869b;
+    --border:#2b3242;
+    --accent:#6f97ff;
+    --accent-ink:#bcd0ff;
+    --accent-soft:#1c2740;
+    --accent2:#f0925a;
+    --accent2-soft:#33241a;
+    --quote-bg:#1c2130;
+    --code-bg:#1c212e;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    padding-inline: 20px;
+    padding-block: 32px 64px;
+  }
+  h1,h2,h3{
+    font-family: "Noto Serif TC","Noto Sans TC",serif;
+    color: var(--ink);
+    text-wrap: balance;
+    line-height: 1.35;
+  }
+  .wrap{ max-width: 780px; margin: 0 auto; }
+
+  header.hero{
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 28px;
+    margin-bottom: 30px;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size: .82rem; letter-spacing:.08em; font-weight:700;
+    color: var(--accent-ink); background: var(--accent-soft);
+    border-radius: 999px; padding: 5px 14px; text-transform: uppercase;
+  }
+  h1.title{
+    font-size: 2.35rem;
+    margin: 16px 0 10px;
+    font-weight: 700;
+  }
+  .subtitle{
+    color: var(--ink-soft);
+    font-size: 1.08rem;
+    margin: 0 0 18px;
+  }
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap: 10px 22px;
+    font-size: .92rem; color: var(--ink-soft);
+  }
+  .meta-row div{ display:flex; gap:6px; align-items:baseline; }
+  .meta-row b{ color: var(--ink); font-weight:600; }
+
+  .disclaimer{
+    margin-top:18px;
+    background: var(--accent2-soft);
+    border: 1px solid color-mix(in srgb, var(--accent2) 35%, var(--border));
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: .92rem;
+    color: var(--ink-soft);
+  }
+  .disclaimer b{ color: var(--ink); }
+
+  nav.toc{
+    display:flex; flex-wrap:wrap; gap:8px;
+    margin: 26px 0 8px;
+  }
+  nav.toc a{
+    font-size:.86rem; text-decoration:none; color: var(--ink-soft);
+    background: var(--surface); border:1px solid var(--border);
+    border-radius: 999px; padding: 6px 13px;
+  }
+  nav.toc a:hover{ color: var(--accent-ink); border-color: var(--accent); }
+
+  section{ margin-top: 44px; scroll-margin-top: 20px; }
+  .kicker{
+    font-size: .85rem; font-weight:700; letter-spacing:.06em;
+    color: var(--accent-ink); text-transform: uppercase; margin-bottom:6px;
+  }
+  h2{
+    font-size: 1.55rem;
+    margin: 0 0 6px;
+    padding-left: 14px;
+    border-left: 4px solid var(--accent);
+  }
+  .section-time{ color: var(--ink-faint); font-size:.88rem; margin: 0 0 16px 18px; }
+  h3{ font-size: 1.15rem; margin: 22px 0 8px; color: var(--accent-ink); }
+  p{ margin: 0 0 14px; }
+  .lede{ font-size: 1.12rem; color: var(--ink); }
+
+  .callout{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .callout.warn{ background: var(--accent2-soft); border-color: color-mix(in srgb, var(--accent2) 30%, var(--border)); }
+  .callout .label{ font-weight:700; font-size:.85rem; text-transform:uppercase; letter-spacing:.05em; color: var(--accent2); margin-bottom:6px; }
+  .callout.warn .label{ color: var(--accent2); }
+
+  ul, ol{ padding-left: 1.35em; margin: 0 0 14px; }
+  li{ margin-bottom: 6px; }
+
+  .steps{ counter-reset: step; list-style:none; padding-left:0; }
+  .steps li{
+    counter-increment: step;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 12px;
+  }
+  .steps li::before{
+    content: counter(step);
+    position:absolute; left:0; top:0;
+    width: 26px; height:26px; border-radius:50%;
+    background: var(--accent-soft); color: var(--accent-ink);
+    font-weight:700; font-size:.85rem;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  .framework{
+    display:grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    gap: 10px; margin: 14px 0 18px;
+  }
+  .framework .card{
+    background: var(--surface); border:1px solid var(--border);
+    border-radius: 10px; padding: 12px 14px;
+  }
+  .framework .card .k{ font-size:.8rem; font-weight:700; color: var(--accent-ink); text-transform:uppercase; letter-spacing:.04em; margin-bottom:4px;}
+  .framework .card .v{ font-size:.95rem; color: var(--ink-soft); }
+
+  blockquote{
+    margin: 14px 0; padding: 14px 18px;
+    background: var(--quote-bg); border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    font-style: italic; color: var(--ink);
+  }
+  .quote-grid{ display:flex; flex-direction:column; gap:12px; margin-top:10px;}
+  .quote-item{
+    background: var(--quote-bg); border:1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+  }
+  .quote-item .tag{
+    display:inline-block; font-size:.78rem; font-weight:700;
+    color: var(--accent-ink); background: var(--accent-soft);
+    border-radius:6px; padding:2px 8px; margin-bottom:8px;
+  }
+  .quote-item p{ margin:0; font-style: italic; }
+
+  .concepts{ display:grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap:12px; margin-top: 12px;}
+  .concept{ background: var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 16px; }
+  .concept dt{ font-weight:700; color: var(--ink); margin-bottom:4px; }
+  .concept dd{ margin:0; color: var(--ink-soft); font-size:.95rem; }
+
+  .action-list{ list-style:none; padding:0; display:flex; flex-direction:column; gap:12px; margin-top:14px;}
+  .action-item{
+    display:flex; gap:12px; align-items:flex-start;
+    background: var(--surface); border:1px solid var(--border);
+    border-radius: 12px; padding: 14px 16px;
+  }
+  .action-item .box{
+    flex: none; width:22px; height:22px; margin-top:2px;
+    border:2px solid var(--accent); border-radius:6px;
+  }
+  .action-item .txt b{ display:block; margin-bottom:3px; }
+  .action-item .txt span{ color: var(--ink-soft); font-size:.92rem; }
+  .first-step{
+    margin-top:14px; padding:14px 16px;
+    background: var(--accent-soft); border-radius:12px;
+    font-size:.95rem;
+  }
+  .first-step b{ color: var(--accent-ink); }
+
+  .room{
+    display:flex; flex-direction:column; gap:10px; margin-top:12px;
+  }
+  .room li{ list-style:none; padding-left:22px; position:relative; color: var(--ink-soft); }
+  .room li::before{ content:"✦"; position:absolute; left:0; color: var(--accent); }
+
+  footer{
+    margin-top: 56px; padding-top: 22px; border-top:1px solid var(--border);
+    color: var(--ink-faint); font-size:.86rem;
+  }
+
+  @media (max-width: 480px){
+    body{ font-size:16.5px; padding-inline:16px; }
+    h1.title{ font-size: 1.9rem; }
+    h2{ font-size: 1.3rem; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow">AI資訊與思考力社群紀錄・分享紀錄</span>
+    <h1 class="title">AI 資訊與思考力社群｜iPad 課堂管理教師快閃研習</h1>
+    <p class="subtitle">第四次社群聚會：行動載具（iPad）融入課堂的班級管理實作教學</p>
+    <div class="meta-row">
+      <div><b>日期</b>2026-11-25（三）</div>
+      <div><b>時間</b>13:30 起，約 60 分鐘</div>
+      <div><b>場合</b>校內教師社群「AI 資訊與思考力社群」第四次聚會・iPad 課堂管理快閃研習</div>
+      <div><b>分享者</b>3cfish</div>
+    </div>
+    <div class="disclaimer">
+      <b>紀錄說明：</b>本文由錄音自動語音辨識後整理，非逐字精確稿。人名、產品名稱、數字等已盡量核對前後文，仍請以實際內容為準；辨識不清處以 <code>[??]</code> 標示。
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#core">核心訊息</a>
+    <a href="#p1">設備現況</a>
+    <a href="#p2">App 總覽</a>
+    <a href="#p3">Classroom 實作</a>
+    <a href="#p4">管理 App 實作</a>
+    <a href="#p5">英文老師技巧</a>
+    <a href="#p6">結語與社群事務</a>
+    <a href="#quotes">精華引述</a>
+    <a href="#concepts">關鍵概念</a>
+    <a href="#actions">行動點</a>
+    <a href="#room">現場側記</a>
+  </nav>
+
+  <section id="core">
+    <div class="kicker">核心訊息</div>
+    <h2 style="border:none;padding-left:0;">兩套 App 搭配，讓 iPad 課堂管理「看得到、管得了、帶得走」</h2>
+    <p class="lede">
+      這是「AI 資訊與思考力社群」第四次聚會，主題聚焦在 <b>iPad 融入課堂的班級管理實作</b>。教師機內建兩款工具：蘋果官方的 <b>Classroom（課堂）</b> App，以及平板代理商另外開發的管理 App，兩者搭配使用，
+      就能做到上課中「看得到全班／個別畫面」、「管得了開啟哪些 App 或網站」，下課後還能「帶得走」——把平板借回家時，用允許清單加上時間鎖定，讓學生只能使用指定的學習資源。
+      分享人也說明了目前校內 iPad 配發現況，以及明年度（116 學年度）的名次擴充規劃。
+    </p>
+  </section>
+
+  <section id="p1">
+    <div class="kicker">Part 1</div>
+    <h2>設備現況與明年度規畫</h2>
+    <div class="section-time">約 00:07:46–00:09:39</div>
+    <p><b>核心觀點：</b>目前各班使用的平板主機仍是舊機，但平板保護套已汰換為新品；今年已利用年底結餘款採購了約四成數量的新套件。原本規劃明年度（116 學年度）國中部會先行配發新 iPad，但後來評估國中端的實際需求較低，因此決定暫緩國中配發、把名額移撥給國小，使國小明年度可望新增 <b>16 台 iPad</b>。</p>
+    <p><b>重要性：</b>讓老師了解設備規劃的邏輯與優先順序，也呼應社群長期在推動的「主動使用」精神。</p>
+    <div class="framework">
+      <div class="card"><div class="k">目前量能</div><div class="v">約四成班級已換發新的平板保護套（主機仍為舊機）</div></div>
+      <div class="card"><div class="k">明年度新增</div><div class="v">國小預計新增約 16 台 iPad（原規劃移撥自國中部名額）</div></div>
+      <div class="card"><div class="k">配發原則</div><div class="v">優先考量四年級以上班級，並以「老師有主動需求、能直接放進教室使用」者優先</div></div>
+    </div>
+  </section>
+
+  <section id="p2">
+    <div class="kicker">Part 2</div>
+    <h2>兩款管理 App 總覽</h2>
+    <div class="section-time">約 00:09:39–00:13:15</div>
+    <p><b>核心觀點：</b>每台教師機裡都內建兩個管理工具：畫面左側是蘋果官方的 <b>Classroom（課堂）</b> App；右側則是平板代理商另外開發的管理 App（逐字稿收音近似「…Teacher」的名稱，確切產品名稱請以簡報為準 <code>[??]</code>），兩者會搭配著一起用。</p>
+    <p>操作邏輯：畫面最上面一排的按鈕是針對「全班」做操作；底下個別的縮圖則是針對「單一學生」；右上角還有一個「選取」功能，可以圈選某幾位學生組成小群組，單獨對這群人做控制（例如只鎖定某一排座位，再點一次同樣的按鈕即可解鎖）。</p>
+    <div class="callout">
+      <div class="label">現場提醒</div>
+      真的遇到不守規矩的狀況，帶領人坦言最快的做法還是「用老師的管教方式，把平板直接收回來」——App 的鎖定、監看功能是輔助，不是取代班級經營。
+    </div>
+  </section>
+
+  <section id="p3">
+    <div class="kicker">Part 3 · Classroom 實作</div>
+    <h2>全班操作的四個常用招式</h2>
+    <div class="section-time">約 00:13:15–00:24:16</div>
+    <p><b>核心觀點：</b>手把手示範 Classroom App 最常用的四種操作，涵蓋「開啟工具、派送網站、監看畫面、收心與下課總結」。</p>
+    <ol class="steps">
+      <li><b>全班同開一個 App：</b>點選想要的工具（現場示範時鐘 App），按下後就能讓全班畫面同時打開同一個工具，省去逐一指導開啟的時間。</li>
+      <li><b>派送網站＋打開後鎖定：</b>先把常用網站（如學校網站、英才網）加進瀏覽器書籤，上課時一鍵把網址派送給全班；搭配「打開後鎖定」可以把畫面鎖在該網站裡，學生按不出去（現場示範時因網路連線稍有延遲，鎖定生效慢了幾秒，帶領人當場說明這是網路問題，不是操作錯誤）。</li>
+      <li><b>畫面監看：</b>點一下即可看到全班即時畫面縮圖；用兩指放大，或連續點兩下，可以放大看個別學生畫面的細節，確認是否真的在進行該做的事。</li>
+      <li><b>收心與下課總結：</b>「跳回主畫面」可以讓分心的畫面瞬間歸位；「鎖定全部」能讓全班螢幕暫時鎖住、專心聽講；「全部靜音」用來處理學生誤開有聲網站的狀況；下課前點選選單，還能看到這堂課「每位學生開了哪些 App、各用了多久」的使用紀錄總表。</li>
+    </ol>
+    <p>另外也示範了「投影」功能：可以把指定學生的平板畫面鏡射到教室電視上，方便讓學生上台報告或解說自己的平板內容，畫面最多可以四分割同時呈現多位學生。</p>
+  </section>
+
+  <section id="p4">
+    <div class="kicker">Part 4 · 管理 App 實作</div>
+    <h2>限制、允許清單與課程範本</h2>
+    <div class="section-time">約 00:24:16–00:35:53</div>
+    <p><b>核心觀點：</b>第二套管理 App 的重點在「限制」與「允許清單」，還能依班級或科目把常用設定存成課程範本，重複套用。</p>
+    <div class="framework">
+      <div class="card"><div class="k">限制特定 App</div><div class="v">例如限制相機 1 分鐘，套用後學生裝置上的相機圖示會被隱藏、無法開啟</div></div>
+      <div class="card"><div class="k">允許清單（Kiosk 模式）</div><div class="v">反過來只允許指定的少數 App（如時鐘、相機）可見可用，其餘功能全部隱藏鎖定</div></div>
+      <div class="card"><div class="k">允許網站＋帶回家鎖定</div><div class="v">結合 Safari 僅允許特定網站（如英才網），並設定鎖定時數（示範設 8 小時），平板帶回家也只能用這個網站</div></div>
+      <div class="card"><div class="k">課程範本</div><div class="v">依任教班級或科目（例如「306 國語」）把當堂課要開放的 App／網站存成範本，下次一鍵套用</div></div>
+    </div>
+    <p>課程範本也能用在課後情境，例如建立一個叫「回家作業・英才網」的範本，專門給平板帶回家時使用；臨時要改變設定時，點一下「清除限制」就能把剛剛的設定全部重設，不受之前設定影響。</p>
+    <blockquote>「你要用不同的情境，去使用不同的 app，你可以直接設定。」</blockquote>
+  </section>
+
+  <section id="p5">
+    <div class="kicker">Part 5</div>
+    <h2>英文老師小技巧：關閉自動校正</h2>
+    <div class="section-time">約 00:35:53–00:37:23</div>
+    <p><b>核心觀點：</b>在「限制」選單裡，有一個「拼寫檢查與自動校正」選項。英文老師把平板發給學生練習拼字或聽寫時，輸入法常會自動校正單字、跳出建議字，影響練習的真實性；把這個選項鎖住（關閉自動校正）之後，學生輸入任何英文單字、字母或句子，都不會再被系統自動修改。</p>
+  </section>
+
+  <section id="p6">
+    <div class="kicker">Part 6</div>
+    <h2>結語與社群事務</h2>
+    <div class="section-time">約 00:37:23–結束</div>
+    <p>簡報檔案會後提供給大家；尚未簽到的同仁請補簽到；也請用手機或平板掃描現場 QR code，簡單填寫幾句回饋問卷。</p>
+  </section>
+
+  <section id="quotes">
+    <div class="kicker">精華引述</div>
+    <h2>5 條現場原話</h2>
+    <div class="quote-grid">
+      <div class="quote-item"><span class="tag">設備規劃原則</span><p>「我覺得有比較有自己主動的那種需求的，我覺得那個是更好。」</p></div>
+      <div class="quote-item"><span class="tag">班級經營心法</span><p>「那種不守規矩其實就是，用老師的管教方式，去把他站到後面去，把平板直接收回來，那是最快的。」</p></div>
+      <div class="quote-item"><span class="tag">帶回家鎖定</span><p>「你就放心的讓孩子呢，帶回去，因爲他回去，他也想開那個東西，他完全不能用別的東西。」</p></div>
+      <div class="quote-item"><span class="tag">課程範本彈性</span><p>「你要用不同的情境，去使用不同的 app，你可以直接設定。」</p></div>
+      <div class="quote-item"><span class="tag">英文教學提醒</span><p>「有時候我們要先把那個自動校正的功能把它關掉⋯⋯它就不會有那個自動編寫校正的功能。」</p></div>
+    </div>
+  </section>
+
+  <section id="concepts">
+    <div class="kicker">關鍵概念工具箱</div>
+    <h2>今天出現的關鍵詞</h2>
+    <dl class="concepts">
+      <div class="concept"><dt>Classroom（課堂）App</dt><dd>蘋果官方的課堂管理工具，教師機可總覽並操作全班或個別學生的平板畫面：開啟 App、鎖定、監看、靜音、投影等。</dd></div>
+      <div class="concept"><dt>平板管理 App（名稱待確認 <code>[??]</code>）</dt><dd>平板代理商另外提供的管理工具，著重在「限制」與「允許清單」，可設定時間鎖定與課程範本，與 Classroom 搭配使用。</dd></div>
+      <div class="concept"><dt>允許清單／Kiosk 模式</dt><dd>只開放指定的 App 或網站使用，其餘功能全部隱藏鎖定，常用於帶回家或需要高度專注的情境。</dd></div>
+      <div class="concept"><dt>課程範本</dt><dd>把某堂課或某班級常用的設定（允許的 App／網站）存成範本，下次上課或換班時一鍵套用，不用每次重新設定。</dd></div>
+      <div class="concept"><dt>打開後鎖定（網站鎖定）</dt><dd>教師派送指定網址後，可以讓學生畫面鎖在該網站裡，無法自行離開，類似 Guided Access 的概念。</dd></div>
+    </dl>
+  </section>
+
+  <section id="actions">
+    <div class="kicker">行動點</div>
+    <h2>回去可以先做的 5 件事</h2>
+    <ul class="action-list">
+      <li class="action-item"><div class="box"></div><div class="txt"><b>為自己任教的班級或科目建立一個課程範本</b><span>把常用的允許 App／網站存起來，下次上課一鍵套用，不用重新設定。</span></div></li>
+      <li class="action-item"><div class="box"></div><div class="txt"><b>平板帶回家使用時，善用「允許清單＋時間鎖定」</b><span>避免平板被用於非學習用途，也能安心讓學生帶回去練習。</span></div></li>
+      <li class="action-item"><div class="box"></div><div class="txt"><b>英文課前先關閉「拼寫檢查與自動校正」</b><span>在限制選單裡鎖住這個選項，讓拼字或聽寫練習更真實。</span></div></li>
+      <li class="action-item"><div class="box"></div><div class="txt"><b>下課前養成看一次「本節 App 使用紀錄」的習慣</b><span>了解學生這堂課實際用了哪些工具、花了多少時間。</span></div></li>
+      <li class="action-item"><div class="box"></div><div class="txt"><b>補齊簽到與問卷回饋</b><span>尚未簽到的同仁請補簽到，也請掃 QR code 簡單填寫幾句心得。</span></div></li>
+    </ul>
+    <div class="first-step">
+      <b>第一步建議：</b>從下一堂會用到平板的課開始，先練習一次「全班同開一個 App」加上「鎖定全部」，熟悉之後再嘗試課程範本與允許清單。
+    </div>
+  </section>
+
+  <section id="room">
+    <div class="kicker">沒到現場會錯過的東西</div>
+    <h2>現場側記</h2>
+    <ul class="room">
+      <li>示範過程中有一次「打開後鎖定」因網路連線稍有延遲、沒有馬上生效，帶領人當場排除並說明這是網路問題，不是操作錯誤</li>
+      <li>有老師現場提問平板投影功能是否類似「拍攝中」直播的概念，帶領人隨即示範把個別學生畫面投影到教室電視，最多可四分割同時呈現</li>
+      <li>現場也臨時測試了「關機／重新開機後，鎖定設定是否還在」的情境，帶領人坦言自己也沒試過，當場和大家一起驗證</li>
+    </ul>
+  </section>
+
+  <footer>
+    由錄音自動轉譯與整理，Claude 協助製作。逐字稿開頭的場邊閒聊（點心分享等與研習主題無關的內容）與語音辨識雜訊已略過，未收錄於本紀錄。
+  </footer>
+
+</div>
+
+</body></html>
